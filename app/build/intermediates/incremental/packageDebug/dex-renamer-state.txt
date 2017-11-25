@@ -1,0 +1,7 @@
+#Sat Nov 25 12:13:43 EST 2017
+base.0=C\:\\Users\\1harr\\Desktop\\Android\\JustEatIt\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_565d82f8e5ef97c7e8573fe125d63795c45e20ab
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\Users\\1harr\\Desktop\\Android\\JustEatIt\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4dd59d7ce9d2fd4164b585ef11ebc6ab34828777\\classes.dex
+base.1=C\:\\Users\\1harr\\Desktop\\Android\\JustEatIt\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4dd59d7ce9d2fd4164b585ef11ebc6ab34828777
+file.0=C\:\\Users\\1harr\\Desktop\\Android\\JustEatIt\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_565d82f8e5ef97c7e8573fe125d63795c45e20ab\\classes.dex
