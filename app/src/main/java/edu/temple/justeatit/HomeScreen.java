@@ -1,18 +1,15 @@
 package edu.temple.justeatit;
 
-import android.media.Image;
+
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-
-import java.util.logging.Logger;
 
 public class HomeScreen extends AppCompatActivity {
 
@@ -44,7 +41,13 @@ public class HomeScreen extends AppCompatActivity {
         int itemId = item.getItemId();
         if (itemId == R.id.action_Options) {
             Toast.makeText(HomeScreen.this, "You clicked te options!", Toast.LENGTH_SHORT).show();
+            openOptions();
         }
         return true;
+    }
+
+    private void openOptions() {
+        Intent intent = new Intent(this, OptionsActivity.class);
+        startActivity(intent);
     }
 }
