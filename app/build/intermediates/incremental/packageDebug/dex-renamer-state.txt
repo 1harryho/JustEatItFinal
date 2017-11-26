@@ -1,7 +1,0 @@
-#Sun Nov 26 01:00:45 EST 2017
-base.0=D\:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c8291dcc709828c1771e913c16f9ee4ead1026c9
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=D\:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_68876ceac7e7fb6e268a3a51962a2f1c39a4ee4b\\classes.dex
-base.1=D\:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_68876ceac7e7fb6e268a3a51962a2f1c39a4ee4b
-file.0=D\:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c8291dcc709828c1771e913c16f9ee4ead1026c9\\classes.dex

@@ -3,7 +3,7 @@
     package="edu.temple.justeatit.test" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="16"
         android:targetSdkVersion="25" />
 
     <instrumentation
@@ -13,7 +13,7 @@
         android:label="Tests for edu.temple.justeatit"
         android:targetPackage="edu.temple.justeatit" />
 
-    <application>
+    <application android:debuggable="true" >
         <uses-library android:name="android.test.runner" />
     </application>
 
