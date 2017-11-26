@@ -3,7 +3,7 @@
     <string name="Options">Options</string>
     <string name="disable_gallery">Disable gallery mode</string>
     <string name="enable_gallery">Enable gallery mode</string>
-    
+
     <string-array name="options_array">
         <item>Enable gallery mode</item>
     </string-array>

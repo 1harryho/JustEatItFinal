@@ -1,89 +1,131 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:2:1-23:12
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:2:1-45:12
 	package
-		ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:3:5-35
-		INJECTED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:3:5-35
+		INJECTED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.CAMERA
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:5:5-65
+	android:name
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:5:22-62
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:6:22-78
+uses-feature#android.hardware.camera.any
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:8:5-10:35
+	android:required
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:10:9-32
+	android:name
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:9:9-51
+uses-feature#android.hardware.camera.autofocus
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:11:5-13:36
+	android:required
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:13:9-33
+	android:name
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:12:9-57
 application
-ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:5:5-21:19
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:15:5-43:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\harrykunx2\.android\build-cache\86d21cc6b016ba95449b90aed8c132edb72788e6\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\harrykunx2\.android\build-cache\a187a5e98cd5ad4167707233bd70be4672bddae9\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\harrykunx2\.android\build-cache\5c7b533f74e2c16648902f3053c207d7b9b98b1d\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\harrykunx2\.android\build-cache\333b122613364302b4933dc82389a7aaee7b5a15\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\harrykunx2\.android\build-cache\2f0a42549effa56d9adf1b564faeb358b822a385\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\harrykunx2\.android\build-cache\f5574c4bbbc8fc58138ef497c140b2ed110cfa66\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\harrykunx2\.android\build-cache\7167b982bf10b60e1a52db6661b83d090f88a922\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\harrykunx2\.android\build-cache\739c54a939a10e2f2573f8c1c390d66490e5bcab\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\harrykunx2\.android\build-cache\400f2638c541414e84907fe7f4fa21023c021fed\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\harrykunx2\.android\build-cache\3b66d224d67b40886994426ac8b573a446034259\output\AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:18:9-41
 	android:supportsRtl
-		ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:19:9-35
 	android:allowBackup
-		ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:16:9-35
 	android:icon
-		ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:17:9-43
 	android:theme
-		ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:10:9-40
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:20:9-40
 activity#edu.temple.justeatit.HomeScreen
-ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:11:9-17:20
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:21:9-27:20
 	android:name
-		ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:11:19-45
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:21:19-45
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:12:13-16:29
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:22:13-26:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:13:17-69
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:23:17-69
 	android:name
-		ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:13:25-66
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:15:17-77
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:25:17-77
 	android:name
-		ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:15:27-74
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:25:27-74
 activity#edu.temple.justeatit.OptionsActivity
-ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:18:9-20:20
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:28:9-30:65
 	android:parentActivityName
-		ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:19:13-53
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:30:13-53
 	android:name
-		ADDED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml:18:19-50
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:29:13-44
+provider#android.support.v4.content.FileProvider
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:32:9-40:20
+	android:authorities
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:34:13-58
+	android:grantUriPermissions
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:36:13-47
+	android:exported
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:33:13-67
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:37:13-39:54
+	android:resource
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:39:17-51
+	android:name
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:38:17-67
+activity#edu.temple.justeatit.GalleryActivity
+ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:42:9-62
+	android:name
+		ADDED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml:42:19-50
 uses-sdk
-INJECTED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+INJECTED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\harrykunx2\.android\build-cache\86d21cc6b016ba95449b90aed8c132edb72788e6\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\harrykunx2\.android\build-cache\a187a5e98cd5ad4167707233bd70be4672bddae9\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\harrykunx2\.android\build-cache\5c7b533f74e2c16648902f3053c207d7b9b98b1d\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\harrykunx2\.android\build-cache\333b122613364302b4933dc82389a7aaee7b5a15\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\harrykunx2\.android\build-cache\2f0a42549effa56d9adf1b564faeb358b822a385\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\harrykunx2\.android\build-cache\f5574c4bbbc8fc58138ef497c140b2ed110cfa66\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\harrykunx2\.android\build-cache\7167b982bf10b60e1a52db6661b83d090f88a922\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\harrykunx2\.android\build-cache\739c54a939a10e2f2573f8c1c390d66490e5bcab\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\harrykunx2\.android\build-cache\400f2638c541414e84907fe7f4fa21023c021fed\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\harrykunx2\.android\build-cache\3b66d224d67b40886994426ac8b573a446034259\output\AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\harrykunx2\.android\build-cache\86d21cc6b016ba95449b90aed8c132edb72788e6\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\1harr\Desktop\Android\JustEatIt\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\JustEatItFinal\JustEatItFinal\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\harrykunx2\.android\build-cache\86d21cc6b016ba95449b90aed8c132edb72788e6\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\harrykunx2\.android\build-cache\a187a5e98cd5ad4167707233bd70be4672bddae9\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\harrykunx2\.android\build-cache\5c7b533f74e2c16648902f3053c207d7b9b98b1d\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\harrykunx2\.android\build-cache\333b122613364302b4933dc82389a7aaee7b5a15\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\harrykunx2\.android\build-cache\2f0a42549effa56d9adf1b564faeb358b822a385\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\harrykunx2\.android\build-cache\f5574c4bbbc8fc58138ef497c140b2ed110cfa66\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\harrykunx2\.android\build-cache\7167b982bf10b60e1a52db6661b83d090f88a922\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\harrykunx2\.android\build-cache\739c54a939a10e2f2573f8c1c390d66490e5bcab\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\harrykunx2\.android\build-cache\400f2638c541414e84907fe7f4fa21023c021fed\output\AndroidManifest.xml:25:5-27:34
 	android:value
-		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\harrykunx2\.android\build-cache\86d21cc6b016ba95449b90aed8c132edb72788e6\output\AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\harrykunx2\.android\build-cache\86d21cc6b016ba95449b90aed8c132edb72788e6\output\AndroidManifest.xml:26:9-47

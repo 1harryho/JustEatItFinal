@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\1harr\\Desktop\\Android\\JustEatIt\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+        "outputFile": "D:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 117
                 },
                 "from": {
-                    "file": "C:\\Users\\1harr\\Desktop\\Android\\JustEatIt\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "file": "C:\\Users\\harrykunx2\\.android\\build-cache\\86d21cc6b016ba95449b90aed8c132edb72788e6\\output\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

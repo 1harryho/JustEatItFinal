@@ -1,57 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="x86"
-    api-level="25"
+    api-level="24"
+    build-mode="COLD"
     density="560dpi"
-    format="8"
-    plugin-version="2.2.3"
-    timestamp="3720483705773631"
-    token="-672529671073524463"
+    format="10"
+    plugin-version="2.3.0"
+    timestamp="1511676384246"
+    token="4209681375659296606"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="338" />
+        duration="307" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="63" />
+        duration="17" />
     <task
         name="verifier"
-        duration="15" />
+        duration="2" />
 
     <artifact
-        location="C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-        type="RESOURCES" />
-    <artifact
-        location="C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
-        type="DEX" />
+        location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
 
     <build
-        timestamp="3717825146327438"
+        build-mode="FULL"
+        timestamp="1511676040047"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\1harr\Desktop\Android\JustEatIt\app\build\outputs\apk\app-debug.apk"
-            type="MAIN" />
+            location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
+        <artifact
+            location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
     </build>
     <build
-        timestamp="3719591460111756"
+        build-mode="COLD"
+        timestamp="1511676384246"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="3720483705773631"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
-        <artifact
-            location="C:\Users\1harr\Desktop\Android\JustEatIt\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
-            type="DEX" />
+            location="D:\Android\JustEatItFinal\JustEatItFinal\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
     </build>
 
 </instant-run>
