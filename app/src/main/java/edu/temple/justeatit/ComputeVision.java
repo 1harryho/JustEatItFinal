@@ -104,7 +104,7 @@ public class ComputeVision extends AsyncTask<Bitmap, Void, JSONObject> {
             return json;
 
         } catch (IOException | JSONException e) {
-            Log.i("ComputeVision", e.toString());
+            Log.e("ComputeVision", e.toString());
         }
         return null;
     }
