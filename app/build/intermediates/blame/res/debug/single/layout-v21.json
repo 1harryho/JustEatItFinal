@@ -1,11 +1,27 @@
 [
     {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
         "merged": "D:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
         "source": "C:\\Users\\harrykunx2\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\70dbcc7b21624947a1180454965f5f9e\\res\\layout-v21\\notification_template_icon_group.xml"
     },
     {
         "merged": "D:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
         "source": "C:\\Users\\harrykunx2\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\70dbcc7b21624947a1180454965f5f9e\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\layout-v21\\notification_action_tombstone.xml"
     },
     {
         "merged": "D:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",

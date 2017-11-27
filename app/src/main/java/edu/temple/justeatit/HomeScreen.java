@@ -16,6 +16,7 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,13 +25,15 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class HomeScreen extends AppCompatActivity {
+public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
 
     RelativeLayout main;
     ImageButton imgButton;
@@ -39,6 +42,7 @@ public class HomeScreen extends AppCompatActivity {
     static final int CAMERA_REQUEST_CODE = 1;
     static final int PERMISSION_CAMERA_ACCESS = 2;
     String picturePath;
+    JSONObject obj = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,6 +154,9 @@ public class HomeScreen extends AppCompatActivity {
             image = null;
             try {
                 image = MediaStore.Images.Media.getBitmap(this.getContentResolver(), photoURI);
+                ComputeVision computeVision = new ComputeVision();
+                computeVision.result = this;
+                computeVision.execute(image);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -197,5 +204,17 @@ public class HomeScreen extends AppCompatActivity {
         File image = File.createTempFile(imageFileName, ".jpg", storageDir);
         picturePath = image.getAbsolutePath();
         return image;
+    }
+
+    @Override
+    public void sendResult(JSONObject obj) {
+        Log.i("sendResult", "we got the obj");
+        this.obj = obj;
+        if (this.obj != null) {
+            Log.i("sendResult", "not null!");
+            System.out.println(this.obj.toString());
+        } else {
+            Log.i("sendResult", "null!");
+        }
     }
 }

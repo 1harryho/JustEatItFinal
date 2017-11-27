@@ -4,8 +4,24 @@
         "source": "C:\\Users\\harrykunx2\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\70dbcc7b21624947a1180454965f5f9e\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\color-v23\\abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\color-v23\\abc_tint_spinner.xml"
+    },
+    {
         "merged": "D:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
         "source": "C:\\Users\\harrykunx2\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\70dbcc7b21624947a1180454965f5f9e\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\color-v23\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\color-v23\\abc_tint_switch_thumb.xml"
     },
     {
         "merged": "D:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
@@ -24,12 +40,36 @@
         "source": "C:\\Users\\harrykunx2\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\70dbcc7b21624947a1180454965f5f9e\\res\\color-v23\\abc_tint_switch_thumb.xml"
     },
     {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\color-v23\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\color-v23\\abc_tint_edittext.xml"
+    },
+    {
         "merged": "D:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
         "source": "C:\\Users\\harrykunx2\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\70dbcc7b21624947a1180454965f5f9e\\res\\color-v23\\abc_tint_seek_thumb.xml"
     },
     {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\color-v23\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\color-v23\\abc_tint_default.xml"
+    },
+    {
         "merged": "D:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
         "source": "C:\\Users\\harrykunx2\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\70dbcc7b21624947a1180454965f5f9e\\res\\color-v23\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "D:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
