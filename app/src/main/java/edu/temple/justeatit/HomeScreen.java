@@ -20,9 +20,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -32,6 +34,8 @@ public class HomeScreen extends AppCompatActivity {
 
     RelativeLayout main;
     ImageButton imgButton;
+    Bitmap image;
+    Uri photoURI;
     static final int CAMERA_REQUEST_CODE = 1;
     static final int PERMISSION_CAMERA_ACCESS = 2;
     String picturePath;
@@ -140,13 +144,17 @@ public class HomeScreen extends AppCompatActivity {
         return true;
     }
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
-//            Bundle img = data.getExtras();
-//            Bitmap imgBitmap = (Bitmap) img.get("data");
-//        }
-//    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
+            image = null;
+            try {
+                image = MediaStore.Images.Media.getBitmap(this.getContentResolver(), photoURI);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     /**
      * Starts the options activity
@@ -170,7 +178,7 @@ public class HomeScreen extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (image != null) {
-                Uri photoURI = FileProvider.getUriForFile(this, "edu.temple.fileprovider", image);
+                photoURI = FileProvider.getUriForFile(this, "JustEatitFinal.edu.temple.provider", image);
                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE);
             }
