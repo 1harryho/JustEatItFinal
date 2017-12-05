@@ -2,28 +2,20 @@ package edu.temple.justeatit;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-/**
- * Created by 1harr on 12/1/2017.
- */
-
 public class GalleryAdapter<Item> extends BaseAdapter {
 
-    LayoutInflater inflater;
-    Context context;
-    ArrayList<Item> items;
+    Context context; // context, ie. the activity so that we can create new views on
+    ArrayList<Item> items; // list of items, ie. bitmaps to display on our gridview
 
     public GalleryAdapter(Context context, ArrayList<Item> items) {
-        this.context = context;
-        this.items = items;
-        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.context = context; // getting context
+        this.items = items; // getting list of bitmaps
     }
 
     @Override
@@ -33,26 +25,30 @@ public class GalleryAdapter<Item> extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return items.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
+    /**
+     * Determines how the grids in the gridview looks
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView thumbnailView;
-        if (convertView == null) {
-            thumbnailView = new ImageView(context);
-            thumbnailView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            thumbnailView.setPadding(8, 8, 8, 8);
-        } else {
-            thumbnailView = (ImageView) convertView;
+
+        CustomView customView;
+        if (convertView == null) { // no views can be reused, make a new one
+            customView = new CustomView(context);
+        } else { // there's a view that can be reused
+            customView = (CustomView) convertView;
         }
-        Bitmap thumbnail = (Bitmap) items.get(position);
-        thumbnailView.setImageBitmap(thumbnail);
-        return thumbnailView;
+
+        // get and set our bitmap in a customview class
+        Bitmap bitmap = (Bitmap) items.get(position);
+        customView.setImage(bitmap);
+        return customView;
     }
 }

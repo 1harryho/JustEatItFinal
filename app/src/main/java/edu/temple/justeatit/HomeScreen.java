@@ -33,14 +33,19 @@ import java.util.Date;
 
 public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
 
-    RelativeLayout main;
-    ImageButton imgButton;
-    Bitmap image;
-    Uri photoURI;
-    static final int CAMERA_REQUEST_CODE = 1;
-    static final int PERMISSION_CAMERA_ACCESS = 2;
-    static final String GALLERY_KEY = "gallery_key_url";
-    String picturePath;
+    private Menu optionsMenu;
+    boolean gallery_enabled;
+    File fileImage;
+    RelativeLayout main; // main activity layout
+    ImageButton imgButton; // camera button
+    Bitmap image; // the current picture's bitmap
+    Uri photoURI; // our photo's uri
+    static final int CAMERA_REQUEST_CODE = 1; // request code to start camera
+    static final int PERMISSION_CAMERA_ACCESS = 2; // code to see if we have access to the camera
+    static final int OPTIONS_REQUEST_CODE = 3; // request code to start option activity
+    static final String GALLERY_KEY = "gallery_key_url"; // key to start gallery activity
+    String picturePath; // path to picture taken
+    String gallery_option;
     JSONObject obj = null;
 
     @Override
@@ -48,9 +53,13 @@ public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
+        // gets references to our views
         main = (RelativeLayout) findViewById(R.id.activity_home_screen);
         imgButton = (ImageButton) findViewById(R.id.imageButton);
 
+        gallery_enabled = true;
+        gallery_option = getString(R.string.disable_gallery);
+        // checks if the app have access to use the camera
         checkForCameraAccess();
     }
 
@@ -79,7 +88,6 @@ public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
         imgButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(HomeScreen.this, "You clicked the camera!", Toast.LENGTH_SHORT).show();
                 startCamera();
             }
         });
@@ -129,6 +137,7 @@ public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        optionsMenu = menu;
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
@@ -158,8 +167,25 @@ public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
                 ComputeVision computeVision = new ComputeVision();
                 computeVision.result = this;
                 computeVision.execute(image);
+                if (!gallery_enabled) {
+                    if (fileImage.delete()) {
+                        Log.i("Delete", "Delete successful");
+                    } else {
+                        Log.i("Delete", "Delete failed");
+                    }
+                }
             } catch (IOException e) {
                 e.printStackTrace();
+            }
+        }
+        if (requestCode == OPTIONS_REQUEST_CODE && resultCode == RESULT_OK) {
+            gallery_option = data.getStringExtra("optionsValue");
+            if (gallery_option.equals(getString(R.string.disable_gallery))) {
+                optionsMenu.findItem(R.id.action_Gallery).setVisible(true);
+                gallery_enabled = true;
+            } else {
+                optionsMenu.findItem(R.id.action_Gallery).setVisible(false);
+                gallery_enabled = false;
             }
         }
     }
@@ -169,7 +195,8 @@ public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
      */
     private void openOptionsActivity() {
         Intent intent = new Intent(this, OptionsActivity.class);
-        startActivity(intent);
+        intent.putExtra("textviewValue", gallery_option);
+        startActivityForResult(intent, OPTIONS_REQUEST_CODE);
     }
 
     /**
@@ -191,10 +218,12 @@ public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
             File image = null;
             try {
                 image = createImage();
+                fileImage = image;
             } catch (IOException e) {
                 e.printStackTrace();
             }
             if (image != null) {
+                //TODO error here when using a real phone
                 photoURI = FileProvider.getUriForFile(this, "JustEatitFinal.edu.temple.provider", image);
                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE);

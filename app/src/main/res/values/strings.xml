@@ -5,8 +5,5 @@
     <string name="enable_gallery">Enable gallery mode</string>
     <string name="gallery_option1">Get nutritional information</string>
     <string name="gallery_option2">Delete</string>
-
-    <string-array name="options_array">
-        <item>Enable gallery mode</item>
-    </string-array>
+    <string name="gallery_option3">Select All</string>
 </resources>

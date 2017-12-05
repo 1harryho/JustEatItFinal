@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="options_array">
-        <item>Enable gallery mode</item>
-    </string-array>
     <attr format="reference" name="constraintSet"/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -450,6 +447,7 @@
     <string name="enable_gallery">Enable gallery mode</string>
     <string name="gallery_option1">Get nutritional information</string>
     <string name="gallery_option2">Delete</string>
+    <string name="gallery_option3">Select All</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

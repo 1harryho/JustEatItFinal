@@ -33,7 +33,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="edu.temple.justeatit.HomeScreen" >
+        <activity
+            android:name="edu.temple.justeatit.HomeScreen"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,10 +44,12 @@
         </activity>
         <activity
             android:name="edu.temple.justeatit.OptionsActivity"
-            android:parentActivityName="edu.temple.justeatit.HomeScreen" />
+            android:parentActivityName="edu.temple.justeatit.HomeScreen"
+            android:screenOrientation="portrait" />
         <activity
             android:name="edu.temple.justeatit.GalleryActivity"
-            android:parentActivityName="edu.temple.justeatit.HomeScreen" />
+            android:parentActivityName="edu.temple.justeatit.HomeScreen"
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="edu.temple.justeatit.GenericFileProvider"

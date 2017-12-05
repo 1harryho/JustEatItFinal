@@ -8,15 +8,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
-import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.AbsListView;
-import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -25,11 +21,10 @@ import java.util.Arrays;
 
 public class GalleryActivity extends AppCompatActivity {
 
-    //TODO open the image's locations and display the images
-    GridView thumbnailsList;
-    GalleryAdapter<Bitmap> galleryAdapter;
-    ArrayList<File> files;
-    ArrayList<Bitmap> bitmaps;
+    GridView thumbnailsList; // gridview to display images
+    GalleryAdapter<Bitmap> galleryAdapter; // gridview's adapter, determines how each grid in the view looks and acts
+    ArrayList<File> files; // arraylist to hold files
+    ArrayList<Bitmap> bitmaps; // arraylist to hold bitmaps converted from files
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,27 +32,46 @@ public class GalleryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gallery);
         thumbnailsList = (GridView) findViewById(R.id.thumbnails_gridview);
 
+        // getting the external storage where pictures are saved
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File[] file = storageDir.listFiles();
-        files = new ArrayList<>(Arrays.asList(file));
 
+        // converting array into arraylist for easy removal of items
+        files = new ArrayList<>(Arrays.asList(file));
         bitmaps = new ArrayList<>();
 
+        // converting the files in external storage into bitmaps
         for (int i = 0; i < files.size(); i++) {
-            Log.i("Files", files.get(i).toString());
+            Log.i("Files", file[i].toString());
             bitmaps.add(BitmapFactory.decodeFile(files.get(i).getAbsolutePath()));
         }
 
+        // setting the gridview's adapter using our converted bitmaps
         galleryAdapter = new GalleryAdapter<>(this, bitmaps);
         thumbnailsList.setAdapter(galleryAdapter);
 
+        // allows for multiple selection on the gridview
         thumbnailsList.setChoiceMode(GridView.CHOICE_MODE_MULTIPLE_MODAL);
         thumbnailsList.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
+
+            /**
+             * functionality to show/hide menu option depending on the number of items in the gridview checked
+             * there should only be one item selected to be able to get nutritional information
+             */
             @Override
             public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
-
+                MenuItem item = mode.getMenu().findItem((R.id.gallery_get_nutrition));
+                if (thumbnailsList.getCheckedItemCount() == 1) {
+                    item.setVisible(true);
+                } else {
+                    item.setVisible(false);
+                }
             }
 
+            /**
+             *
+             * Creating the contexual action bar from our menu resource
+             */
             @Override
             public boolean onCreateActionMode(ActionMode mode, Menu menu) {
                 MenuInflater inflater = mode.getMenuInflater();
@@ -70,12 +84,25 @@ public class GalleryActivity extends AppCompatActivity {
                 return false;
             }
 
+            /**
+             * Functionality to determine what to do when each menu option is clicked
+             */
             @Override
             public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
                 switch(item.getItemId()) {
+                    // delete the item
                     case R.id.gallery_delete:
-                        deleteItem();
+                        if (!deleteItem()) {
+                            Toast.makeText(GalleryActivity.this, "Failed to delete images!", Toast.LENGTH_LONG).show();
+                        }
                         mode.finish();
+                        return true;
+                    // select all items in the gridview
+                    case R.id.gallery_select_all:
+                        setAllItemsChecked();
+                        return true;
+                    // get the nutritional information of the picture using the api
+                    case R.id.gallery_get_nutrition:
                         return true;
                 }
                 return false;
@@ -88,7 +115,20 @@ public class GalleryActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Sets all items in the gridview into the checked state
+     */
+    private void setAllItemsChecked() {
+        int numItems = thumbnailsList.getCount();
+        for (int i = 0; i < numItems; i++) {
+            thumbnailsList.setItemChecked(i, true);
+        }
+    }
 
+    /**
+     * Deletes all items in the gridview that are checked
+     * @return a boolean to determine if deleting worked or not
+     */
     private boolean deleteItem() {
         SparseBooleanArray checked = thumbnailsList.getCheckedItemPositions();
         int len = thumbnailsList.getCount();

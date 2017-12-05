@@ -1,13 +1,5 @@
 [
     {
-        "merged": "D:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Users\\harrykunx2\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\70dbcc7b21624947a1180454965f5f9e\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
-        "merged": "D:\\Android\\JustEatItFinal\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Users\\harrykunx2\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\70dbcc7b21624947a1180454965f5f9e\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
-    },
-    {
         "merged": "C:\\Users\\1harr\\Desktop\\Android\\JustEatItFinal\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
         "source": "C:\\Users\\1harr\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\886b32d9c1394bd4c59baf4744ed8f95\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     },

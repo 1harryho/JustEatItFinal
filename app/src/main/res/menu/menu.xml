@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:title="@string/Options"
-        android:id="@+id/action_Options"
-        app:showAsAction="ifRoom"/>
-    <item
         android:title="Gallery"
         android:id="@+id/action_Gallery"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:title="@string/Options"
+        android:id="@+id/action_Options"
         app:showAsAction="ifRoom"/>
 </menu>
