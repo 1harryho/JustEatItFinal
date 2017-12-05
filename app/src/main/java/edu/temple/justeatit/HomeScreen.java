@@ -21,13 +21,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import org.json.JSONObject;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -41,6 +39,7 @@ public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
     Uri photoURI;
     static final int CAMERA_REQUEST_CODE = 1;
     static final int PERMISSION_CAMERA_ACCESS = 2;
+    static final String GALLERY_KEY = "gallery_key_url";
     String picturePath;
     JSONObject obj = null;
 
@@ -143,7 +142,9 @@ public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
         if (itemId == R.id.action_Options) {
-            openOptions();
+            openOptionsActivity();
+        } else if (itemId == R.id.action_Gallery) {
+            openGalleryActivity();
         }
         return true;
     }
@@ -166,8 +167,17 @@ public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
     /**
      * Starts the options activity
      */
-    private void openOptions() {
+    private void openOptionsActivity() {
         Intent intent = new Intent(this, OptionsActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Starts the gallery activity
+     */
+    private void openGalleryActivity() {
+        Intent intent = new Intent(this, GalleryActivity.class);
+        intent.putExtra(GALLERY_KEY, "gallery_key_url");
         startActivity(intent);
     }
 

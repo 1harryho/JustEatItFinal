@@ -19,6 +19,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".HomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,11 +27,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".OptionsActivity"
             android:parentActivityName=".HomeScreen"></activity>
 
-        <activity android:name=".GalleryActivity"></activity>
+        <activity android:name=".GalleryActivity"
+            android:parentActivityName=".HomeScreen"></activity>
 
         <provider
             android:authorities="JustEatitFinal.edu.temple.provider"

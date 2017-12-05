@@ -6,9 +6,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 public class OptionsActivity extends AppCompatActivity {
 
@@ -21,7 +18,7 @@ public class OptionsActivity extends AppCompatActivity {
 
         optionsList = (ListView) findViewById(R.id.options_list);
         String[] options_list = getResources().getStringArray(R.array.options_array);
-        CustomAdapter<String> listAdapter = new CustomAdapter<>(this, options_list);
+        OptionsAdapter<String> listAdapter = new OptionsAdapter<>(this, options_list);
         optionsList.setAdapter(listAdapter);
         optionsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

@@ -12,12 +12,12 @@ import android.widget.TextView;
  * Created by 1harr on 11/25/2017.
  */
 
-public class CustomAdapter<Item> extends BaseAdapter {
+public class OptionsAdapter<Item> extends BaseAdapter {
 
     Context context;
     Item[] items;
 
-    public CustomAdapter(Context context, Item[] items) {
+    public OptionsAdapter(Context context, Item[] items) {
         this.context = context;
         this.items = (Item[]) items;
     }
@@ -39,7 +39,12 @@ public class CustomAdapter<Item> extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        TextView txtview = new TextView(context);
+        TextView txtview;
+        if (convertView == null) {
+            txtview = new TextView(context);
+        } else {
+            txtview = (TextView) convertView;
+        }
         String text = items[position].toString();
         txtview.setText(text);
         txtview.setGravity(Gravity.CENTER);

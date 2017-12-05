@@ -3,13 +3,16 @@ package edu.temple.justeatit;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.util.Base64;
 import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutput;
 import java.io.DataOutputStream;
@@ -17,6 +20,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -48,62 +53,41 @@ public class ComputeVision extends AsyncTask<Bitmap, Void, JSONObject> {
             URL url = new URL(builder.build().toString());
             httpclient = (HttpURLConnection) url.openConnection();
 
-            Log.i("ComputeVision", "Opened connection");
+
 
             httpclient.setRequestMethod("POST");
             httpclient.setRequestProperty("Content-Type", "multipart/form-data");
             httpclient.setRequestProperty("Ocp-Apim-Subscription-Key", subscriptionKey);
             httpclient.setDoOutput(true);
+            httpclient.setDoInput(true);
+            httpclient.setUseCaches(false);
 
-            Log.i("ComputeVision", "Set POST request headers");
-            Log.i("ComputeVision", "Beginning to write");
+            OutputStream out = new BufferedOutputStream(httpclient.getOutputStream());
+            BufferedWriter writer = new BufferedWriter (new OutputStreamWriter(out, "UTF-8"));
 
-            DataOutputStream request = new DataOutputStream(httpclient.getOutputStream());
-            request.writeBytes("\r\n");
-            request.writeBytes("\r\n");
-
-            Log.i("ComputeVision", "Wrote new lines");
+            Log.i("ComputeVision", "Got writing streams");
 
             Bitmap bitmap = bitmaps[0];
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
             byte[] byteArray = stream.toByteArray();
+            String s = Base64.encodeToString(byteArray, Base64.DEFAULT);
 
-            Log.i("ComputeVision", "Converted bitmap to bytes");
+            writer.write(s);
 
-            request.write(byteArray);
+            writer.flush();
 
-            Log.i("ComputeVision", "Writing bytes");
+            writer.close();
 
-            request.flush();
-            request.close();
+            out.close();
 
-            Log.i("ComputeVision", "Cleaned outputstream");
+            httpclient.connect();
 
-            InputStream response = new BufferedInputStream(httpclient.getInputStream());
-            BufferedReader reader = new BufferedReader(new InputStreamReader(response));
+            Log.i("ComputeVision", "Connected");
 
-            Log.i("ComputeVision", "Beginning reading input");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(httpclient.getInputStream()));
 
-            String line = "";
-            StringBuilder sb = new StringBuilder();
-            while ((line = reader.readLine()) != null) {
-                sb.append(line).append("\n");
-            }
-            reader.close();
-
-            Log.i("ComputeVision", "Created string");
-
-            String contents = sb.toString();
-            JSONObject json = new JSONObject(contents);
-
-            Log.i("ComputeVision", "Converting string to json");
-
-            response.close();
-            httpclient.disconnect();
-            return json;
-
-        } catch (IOException | JSONException e) {
+        } catch (IOException e) {
             Log.e("ComputeVision", e.toString());
         }
         return null;

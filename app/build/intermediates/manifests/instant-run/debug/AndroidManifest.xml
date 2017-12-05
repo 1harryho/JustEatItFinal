@@ -43,7 +43,9 @@
         <activity
             android:name="edu.temple.justeatit.OptionsActivity"
             android:parentActivityName="edu.temple.justeatit.HomeScreen" />
-        <activity android:name="edu.temple.justeatit.GalleryActivity" />
+        <activity
+            android:name="edu.temple.justeatit.GalleryActivity"
+            android:parentActivityName="edu.temple.justeatit.HomeScreen" />
 
         <provider
             android:name="edu.temple.justeatit.GenericFileProvider"

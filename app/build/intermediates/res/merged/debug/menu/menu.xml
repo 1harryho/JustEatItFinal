@@ -5,4 +5,8 @@
         android:title="@string/Options"
         android:id="@+id/action_Options"
         app:showAsAction="ifRoom"/>
+    <item
+        android:title="Gallery"
+        android:id="@+id/action_Gallery"
+        app:showAsAction="ifRoom"/>
 </menu>
