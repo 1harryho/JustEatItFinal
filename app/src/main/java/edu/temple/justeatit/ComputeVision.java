@@ -13,6 +13,8 @@ import org.apache.http.entity.mime.HttpMultipartMode;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -26,14 +28,14 @@ import java.net.URISyntaxException;
  * Created by harrykunx2 on 11/26/2017.
  */
 
-public class ComputeVision extends AsyncTask<File, Void, JSONObject> {
+public class ComputeVision extends AsyncTask<File, Void, String> {
 
     public static final String subscriptionKey = "964f1c1fb54f402ca9202bd76c33d4b0";
     public static final String uriBase = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/analyze";
     public AsyncResponse result = null;
 
     @Override
-    protected JSONObject doInBackground(File... files) {
+    protected String doInBackground(File... files) {
         HttpClient client = new DefaultHttpClient();
 //        HttpURLConnection httpclient = null;
         try {
@@ -73,22 +75,33 @@ public class ComputeVision extends AsyncTask<File, Void, JSONObject> {
             HttpEntity responseEntity = response.getEntity();
 
             if (responseEntity != null) {
-                Log.i("Entity", "Entity isn't null!");
                 String jsonString = EntityUtils.toString(responseEntity);
+                JSONObject jsonObject = new JSONObject(jsonString);
+
                 System.out.println(jsonString);
-            } else {
-                Log.i("Entity", "Entity is null");
+
+                JSONArray tags = jsonObject.getJSONArray("tags");
+                for (int i = 0; i < tags.length(); i++) {
+                    JSONObject object = tags.getJSONObject(i);
+                    String name = object.getString("name");
+                    if (!(name.equals("food") || name.equals("dish") || name.equals("spoon") || name.equals("fork") || name.equals("knife"))) {
+                        if (object.has("hint") && object.get("hint").equals("food")) {
+                            return name;
+                        }
+                    }
+                }
+                System.out.println("Are we getting here?");
             }
 
-        } catch (URISyntaxException | IOException e) {
+        } catch (URISyntaxException | IOException  | JSONException e) {
             Log.e("ComputeVision", e.toString());
         }
         return null;
     }
 
     @Override
-    protected void onPostExecute(JSONObject jsonObject) {
-        result.sendResult(jsonObject);
+    protected void onPostExecute(String string) {
+        result.sendResult(string);
     }
 
     private Bitmap decodeFile(File f) {

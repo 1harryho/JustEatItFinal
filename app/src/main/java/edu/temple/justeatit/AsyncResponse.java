@@ -7,5 +7,5 @@ import org.json.JSONObject;
  */
 
 public interface AsyncResponse {
-    void sendResult(JSONObject obj);
+    void sendResult(String string);
 }

@@ -46,7 +46,7 @@ public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
     static final String GALLERY_KEY = "gallery_key_url"; // key to start gallery activity
     String picturePath; // path to picture taken
     String gallery_option;
-    JSONObject obj = null;
+    String tag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -208,6 +208,12 @@ public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
         startActivity(intent);
     }
 
+    private void openNutritionWebActivity(String food) {
+        Intent intent = new Intent(this, NutritionWebActivity.class);
+        intent.putExtra("food_name", food);
+        startActivity(intent);
+    }
+
     /**
      * Creates a uniquely-named file to store an image inside and
      * starts the camera
@@ -246,14 +252,13 @@ public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
     }
 
     @Override
-    public void sendResult(JSONObject obj) {
-        Log.i("sendResult", "we got the obj");
-        this.obj = obj;
-        if (this.obj != null) {
-            Log.i("sendResult", "not null!");
-            System.out.println(this.obj.toString());
+    public void sendResult(String string) {
+        tag = string;
+        if (tag != null) {
+            System.out.println(tag);
+            openNutritionWebActivity(tag);
         } else {
-            Log.i("sendResult", "null!");
+            Toast.makeText(this, "No food could be found in the picture!", Toast.LENGTH_SHORT).show();
         }
     }
 }

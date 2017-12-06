@@ -1,11 +1,9 @@
 package edu.temple.justeatit;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
 import android.view.Menu;
@@ -19,11 +17,12 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class GalleryActivity extends AppCompatActivity {
+public class GalleryActivity extends AppCompatActivity implements AsyncResponse{
 
     GridView thumbnailsList; // gridview to display images
     GalleryAdapter<File> galleryAdapter; // gridview's adapter, determines how each grid in the view looks and acts
     ArrayList<File> files; // arraylist to hold files
+    String tag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +94,10 @@ public class GalleryActivity extends AppCompatActivity {
                         return true;
                     // get the nutritional information of the picture using the api
                     case R.id.gallery_get_nutrition:
+                        ComputeVision computeVision = new ComputeVision();
+                        computeVision.result = GalleryActivity.this;
+                        int position = getCheckedPosition();
+                        computeVision.execute(files.get(position));
                         return true;
                 }
                 return false;
@@ -105,6 +108,17 @@ public class GalleryActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private int getCheckedPosition() {
+        SparseBooleanArray checked = thumbnailsList.getCheckedItemPositions();
+        int len = thumbnailsList.getCount();
+        for (int i = len; i >= 0; i--) {
+            if (checked.get(i)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -135,5 +149,22 @@ public class GalleryActivity extends AppCompatActivity {
             }
         }
         return true;
+    }
+
+    @Override
+    public void sendResult(String string) {
+        tag = string;
+        if (tag != null) {
+            System.out.println(tag);
+            openNutritionWebActivity(tag);
+        } else {
+            Toast.makeText(this, "No food could be found in the picture!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void openNutritionWebActivity(String food) {
+        Intent intent = new Intent(this, NutritionWebActivity.class);
+        intent.putExtra("food_name", food);
+        startActivity(intent);
     }
 }
