@@ -6,12 +6,18 @@ import android.os.AsyncTask;
 import android.util.Base64;
 import android.util.Log;
 
+import com.android.internal.http.multipart.MultipartEntity;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.ByteArrayBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
@@ -60,23 +66,24 @@ public class ComputeVision extends AsyncTask<Bitmap, Void, JSONObject> {
 
             HttpPost REQUEST = new HttpPost(uri);
 
+            String boundary = "-------------" + System.currentTimeMillis();
+
             Log.i("ComputeVision", "Creating POST Request with uri");
 
-//            REQUEST.setHeader("Content-Type","multipart/form-data");
-            REQUEST.setHeader("Content-Type","application/json");
+            REQUEST.setHeader("Content-Type","multipart/form-data; boundary="+boundary);
             REQUEST.setHeader("Ocp-Apim-Subscription-Key",subscriptionKey);
 
             Log.i("ComputeVision", "Set request headers");
 
-//            Bitmap bitmap = bitmaps[0];
-//            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-//            byte[] byteArray = stream.toByteArray();
-//            String s = new String(byteArray);
-//            String s = Base64.encodeToString(byteArray, Base64.DEFAULT);
-//            StringEntity entity = new StringEntity(s);
-            StringEntity entity = new StringEntity("{\"url\":\"https://www.organicfacts.net/wp-content/uploads/2013/05/Banana3.jpg\"}");
-            REQUEST.setEntity(entity);
+            Bitmap bitmap = bitmaps[0];
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            byte[] byteArray = stream.toByteArray();
+            MultipartEntityBuilder entityBuilder = MultipartEntityBuilder.create();
+            entityBuilder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+            entityBuilder.setBoundary(boundary);
+            entityBuilder.addBinaryBody("pic.jpeg", byteArray);
+            REQUEST.setEntity(entityBuilder.build());
 
             Log.i("ComputeVision", "Set request body");
 
@@ -90,10 +97,6 @@ public class ComputeVision extends AsyncTask<Bitmap, Void, JSONObject> {
             } else {
                 Log.i("Entity", "Entity is null");
             }
-//
-//            Log.i("ComputeVision", "Connected");
-//
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(httpclient.getInputStream()));
 
         } catch (URISyntaxException | IOException e) {
             Log.e("ComputeVision", e.toString());
