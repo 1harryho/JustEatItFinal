@@ -166,7 +166,7 @@ public class HomeScreen extends AppCompatActivity implements  AsyncResponse{
                 image = MediaStore.Images.Media.getBitmap(this.getContentResolver(), photoURI);
                 ComputeVision computeVision = new ComputeVision();
                 computeVision.result = this;
-                computeVision.execute(image);
+                computeVision.execute(fileImage);
                 if (!gallery_enabled) {
                     if (fileImage.delete()) {
                         Log.i("Delete", "Delete successful");

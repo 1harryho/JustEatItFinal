@@ -2,16 +2,20 @@ package edu.temple.justeatit;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class GalleryAdapter<Item> extends BaseAdapter {
 
     Context context; // context, ie. the activity so that we can create new views on
-    ArrayList<Item> items; // list of items, ie. bitmaps to display on our gridview
+    ArrayList<Item> items; // list of items, ie. files to display on our gridview
 
     public GalleryAdapter(Context context, ArrayList<Item> items) {
         this.context = context; // getting context
@@ -44,11 +48,33 @@ public class GalleryAdapter<Item> extends BaseAdapter {
             customView = new CustomView(context);
         } else { // there's a view that can be reused
             customView = (CustomView) convertView;
+            customView.setImage(null);
         }
 
         // get and set our bitmap in a customview class
-        Bitmap bitmap = (Bitmap) items.get(position);
+        Bitmap bitmap = decodeFile((File) items.get(position));
         customView.setImage(bitmap);
         return customView;
+    }
+
+    private Bitmap decodeFile(File f) {
+        try {
+            BitmapFactory.Options o = new BitmapFactory.Options();
+            o.inJustDecodeBounds = true;
+            BitmapFactory.decodeStream(new FileInputStream(f), null, o);
+
+            final int REQUIRED_SIZE=70;
+
+            int scale = 1;
+            while(o.outWidth / scale / 2 >= REQUIRED_SIZE &&
+                    o.outHeight / scale / 2 >= REQUIRED_SIZE) {
+                scale *= 2;
+            }
+
+            BitmapFactory.Options o2 = new BitmapFactory.Options();
+            o2.inSampleSize = scale;
+            return BitmapFactory.decodeStream(new FileInputStream(f), null, o2);
+        } catch (FileNotFoundException e) {}
+        return null;
     }
 }

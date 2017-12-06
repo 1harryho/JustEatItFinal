@@ -1,58 +1,39 @@
 package edu.temple.justeatit;
 
 import android.graphics.Bitmap;
-import android.net.Uri;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.util.Base64;
 import android.util.Log;
-
-import com.android.internal.http.multipart.MultipartEntity;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.entity.ContentType;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.entity.mime.HttpMultipartMode;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.entity.mime.content.ByteArrayBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
-import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
-import java.io.DataOutput;
-import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 
 /**
  * Created by harrykunx2 on 11/26/2017.
  */
 
-public class ComputeVision extends AsyncTask<Bitmap, Void, JSONObject> {
+public class ComputeVision extends AsyncTask<File, Void, JSONObject> {
 
     public static final String subscriptionKey = "964f1c1fb54f402ca9202bd76c33d4b0";
     public static final String uriBase = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/analyze";
     public AsyncResponse result = null;
 
     @Override
-    protected JSONObject doInBackground(Bitmap... bitmaps) {
+    protected JSONObject doInBackground(File... files) {
         HttpClient client = new DefaultHttpClient();
 //        HttpURLConnection httpclient = null;
         try {
@@ -75,7 +56,8 @@ public class ComputeVision extends AsyncTask<Bitmap, Void, JSONObject> {
 
             Log.i("ComputeVision", "Set request headers");
 
-            Bitmap bitmap = bitmaps[0];
+            File file = files[0];
+            Bitmap bitmap = decodeFile(file);
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
             byte[] byteArray = stream.toByteArray();
@@ -107,5 +89,26 @@ public class ComputeVision extends AsyncTask<Bitmap, Void, JSONObject> {
     @Override
     protected void onPostExecute(JSONObject jsonObject) {
         result.sendResult(jsonObject);
+    }
+
+    private Bitmap decodeFile(File f) {
+        try {
+            BitmapFactory.Options o = new BitmapFactory.Options();
+            o.inJustDecodeBounds = true;
+            BitmapFactory.decodeStream(new FileInputStream(f), null, o);
+
+            final int REQUIRED_SIZE=70;
+
+            int scale = 1;
+            while(o.outWidth / scale / 2 >= REQUIRED_SIZE &&
+                    o.outHeight / scale / 2 >= REQUIRED_SIZE) {
+                scale *= 2;
+            }
+
+            BitmapFactory.Options o2 = new BitmapFactory.Options();
+            o2.inSampleSize = scale;
+            return BitmapFactory.decodeStream(new FileInputStream(f), null, o2);
+        } catch (FileNotFoundException e) {}
+        return null;
     }
 }

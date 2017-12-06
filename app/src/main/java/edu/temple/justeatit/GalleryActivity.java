@@ -22,9 +22,8 @@ import java.util.Arrays;
 public class GalleryActivity extends AppCompatActivity {
 
     GridView thumbnailsList; // gridview to display images
-    GalleryAdapter<Bitmap> galleryAdapter; // gridview's adapter, determines how each grid in the view looks and acts
+    GalleryAdapter<File> galleryAdapter; // gridview's adapter, determines how each grid in the view looks and acts
     ArrayList<File> files; // arraylist to hold files
-    ArrayList<Bitmap> bitmaps; // arraylist to hold bitmaps converted from files
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +37,9 @@ public class GalleryActivity extends AppCompatActivity {
 
         // converting array into arraylist for easy removal of items
         files = new ArrayList<>(Arrays.asList(file));
-        bitmaps = new ArrayList<>();
 
-        // converting the files in external storage into bitmaps
-        for (int i = 0; i < files.size(); i++) {
-            Log.i("Files", file[i].toString());
-            bitmaps.add(BitmapFactory.decodeFile(files.get(i).getAbsolutePath()));
-        }
-
-        // setting the gridview's adapter using our converted bitmaps
-        galleryAdapter = new GalleryAdapter<>(this, bitmaps);
+        // setting the gridview's adapter using our files
+        galleryAdapter = new GalleryAdapter<>(this, files);
         thumbnailsList.setAdapter(galleryAdapter);
 
         // allows for multiple selection on the gridview
@@ -135,9 +127,8 @@ public class GalleryActivity extends AppCompatActivity {
         for (int i = len; i >= 0; i--) {
             if (checked.get(i)) {
                 boolean deleted = files.get(i).delete();
-                files.remove(i);
                 if (deleted) {
-                    bitmaps.remove(i);
+                    files.remove(i);
                     galleryAdapter.notifyDataSetChanged();
                 }
                 else return deleted;
